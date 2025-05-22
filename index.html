@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погодный Анализатор</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Погодный Анализатор</h1>
+        <div class="weather-form">
+            <form action="/" method="POST">
+                <div class="input-group">
+                    <label for="latitude">Широта:</label>
+                    <input type="number" id="latitude" name="latitude" step="any" required placeholder="Например: 55.7558">
+                </div>
+                <div class="input-group">
+                    <label for="longitude">Долгота:</label>
+                    <input type="number" id="longitude" name="longitude" step="any" required placeholder="Например: 37.6173">
+                </div>
+                <button type="submit">Проверить погоду</button>
+            </form>
+        </div>
+        <div class="info-box">
+            <h2>Как это работает?</h2>
+            <p>Введите координаты места, и мы проанализируем погодные условия:</p>
+            <ul>
+                <li>Температура выше 35°C или ниже 0°C</li>
+                <li>Скорость ветра более 50 км/ч</li>
+                <li>Вероятность осадков более 70%</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

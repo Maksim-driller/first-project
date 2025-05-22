@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты - Погодный Анализатор</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="result-box">
+            <h2>Результаты анализа погоды</h2>
+            
+            <div class="weather-details">
+                <div class="detail-item">
+                    <h3>Температура</h3>
+                    <p>{{ temperature }}°C</p>
+                    {% if conditions.temperature %}
+                    <span class="warning">⚠️ Экстремальная температура</span>
+                    {% endif %}
+                </div>
+
+                <div class="detail-item">
+                    <h3>Скорость ветра</h3>
+                    <p>{{ wind_speed }} км/ч</p>
+                    {% if conditions.wind %}
+                    <span class="warning">⚠️ Сильный ветер</span>
+                    {% endif %}
+                </div>
+
+                <div class="detail-item">
+                    <h3>Вероятность осадков</h3>
+                    <p>{{ precipitation }}%</p>
+                    {% if conditions.precipitation %}
+                    <span class="warning">⚠️ Высокая вероятность осадков</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="summary">
+                <h3>Общий вывод:</h3>
+                {% if conditions.temperature or conditions.wind or conditions.precipitation %}
+                <p class="warning-text">⚠️ Погодные условия неблагоприятны</p>
+                {% else %}
+                <p class="success-text">✅ Погодные условия благоприятны</p>
+                {% endif %}
+            </div>
+
+            <a href="/" class="back-button">Проверить другое место</a>
+        </div>
+    </div>
+</body>
+</html> 
